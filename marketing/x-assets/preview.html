@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>memo-pad — X Assets Preview</title>
+<style>
+  :root { --ink: #09090B; --muted: #52525B; --ghost: #A1A1AA; --border: #D4D4D8; --soft: #E4E4E7; --paper: #FFFFFF; --bg: #F4F4F5; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 40px 24px 80px; background: var(--bg); font-family: ui-sans-serif, -apple-system, Inter, "Hiragino Kaku Gothic ProN", sans-serif; color: var(--ink); }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 32px; }
+  .label { font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--ghost); margin: 32px 0 10px; text-transform: uppercase; }
+
+  /* X profile preview */
+  .card { background: var(--paper); border: 1px solid var(--soft); border-radius: 16px; overflow: hidden; }
+  .banner { width: 100%; aspect-ratio: 3/1; background: #fff; position: relative; border-bottom: 1px solid var(--soft); }
+  .banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar { position: absolute; left: 16px; bottom: -64px; width: 128px; height: 128px; border-radius: 50%; border: 4px solid var(--paper); overflow: hidden; background: #09090B; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .profile-body { padding: 80px 20px 24px; }
+  .name { font-size: 20px; font-weight: 700; margin: 0; }
+  .handle { font-size: 14px; color: var(--ghost); margin: 2px 0 12px; }
+  .bio { font-size: 14px; color: var(--ink); margin: 0 0 12px; line-height: 1.55; }
+  .meta { font-size: 13px; color: var(--ghost); display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* icon size test */
+  .sizes { display: flex; gap: 24px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+  .size { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .size .px { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--ghost); letter-spacing: 0.1em; }
+  .size img { border-radius: 50%; background: #09090B; }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .opt { background: var(--paper); border: 1px solid var(--soft); border-radius: 12px; padding: 16px; }
+  .opt h3 { margin: 0 0 8px; font-size: 14px; letter-spacing: -0.005em; }
+  .opt p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .opt img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; display: block; margin-bottom: 10px; }
+
+  @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>memo-pad — X Assets</h1>
+  <p class="sub">Profile icon (400×400) + Banner (1500×500)。Xは自動で円形クロップする。</p>
+
+  <div class="label">01 · Profile preview (Icon A + Banner)</div>
+  <div class="card">
+    <div class="banner">
+      <img src="banner-x.png" alt="banner"/>
+      <div class="avatar"><img src="icon-x-a.png" alt="avatar"/></div>
+    </div>
+    <div class="profile-body">
+      <p class="name">memo-pad</p>
+      <p class="handle">@memopad_app</p>
+      <p class="bio">ちぎるメモ帳。紙の気持ちよさを、指先に。<br/>iOS · Web · Offline.</p>
+      <p class="meta"><span>🔗 memo-pad.app</span><span>📍 Tokyo</span><span>🗓 Joined May 2026</span></p>
+    </div>
+  </div>
+
+  <div class="label">02 · Icon options</div>
+  <div class="row">
+    <div class="opt">
+      <img src="icon-x-a.png" alt="Icon A"/>
+      <h3>A. minimal — black + m</h3>
+      <p>先に見せた投稿ロードマップのアバターと同じ系統。小サイズでも強く読める。</p>
+    </div>
+    <div class="opt">
+      <img src="icon-x-b.png" alt="Icon B"/>
+      <h3>B. torn paper + m</h3>
+      <p>アプリアイコンの"ちぎれた紙"を残した派生。小サイズだと読みにくくなる可能性あり。</p>
+    </div>
+  </div>
+
+  <div class="label">03 · Icon A at real X sizes (円形クロップ)</div>
+  <div class="sizes">
+    <div class="size"><img src="icon-x-a.png" width="128" height="128"/><span class="px">128 PROFILE</span></div>
+    <div class="size"><img src="icon-x-a.png" width="48" height="48"/><span class="px">48 TWEET</span></div>
+    <div class="size"><img src="icon-x-a.png" width="32" height="32"/><span class="px">32 REPLY</span></div>
+    <div class="size"><img src="icon-x-a.png" width="24" height="24"/><span class="px">24 LIST</span></div>
+  </div>
+
+  <div class="label">04 · Icon B at real X sizes</div>
+  <div class="sizes">
+    <div class="size"><img src="icon-x-b.png" width="128" height="128"/><span class="px">128 PROFILE</span></div>
+    <div class="size"><img src="icon-x-b.png" width="48" height="48"/><span class="px">48 TWEET</span></div>
+    <div class="size"><img src="icon-x-b.png" width="32" height="32"/><span class="px">32 REPLY</span></div>
+    <div class="size"><img src="icon-x-b.png" width="24" height="24"/><span class="px">24 LIST</span></div>
+  </div>
+
+</div>
+</body>
+</html>
